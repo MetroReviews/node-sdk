@@ -7,7 +7,7 @@
   Type Friendly API Wrapper for the Metro Reviews API
 </p>
 
-[![Version](https://img.shields.io/badge/v0.0.1%20-green.svg?style=flat)](https://github.com/MetroReviews/metro-sdk)
+[![Version](https://img.shields.io/badge/Version-v0.0.1%20-green.svg?style=flat)](https://github.com/MetroReviews/metro-sdk)
 [![NPM Version](https://img.shields.io/badge/NPM-v0.0.1-red.svg)](https://github.com/MetroReviews/metro-sdk)
 [![License Type](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/MetroReviews/metro-sdk)
 
