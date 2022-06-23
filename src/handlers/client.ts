@@ -72,7 +72,7 @@ export class MetroClient extends EventEmitter {
         /**
          * eslint-disable-camelcase
          */
-        await this._request('POST', `lists/${id}`, {
+        await this._request('PATCH', `lists/${id}`, {
             name: listInfo.name,
             description: listInfo.description,
             domain: listInfo.domain,
@@ -100,5 +100,12 @@ export class MetroClient extends EventEmitter {
         if (!id) throw new Error('[Metro API] Invalid List ID or List ID is missing!');
         
         return this._request('GET', `list/${id}`);
+    }
+
+    /**
+     * @returns Array of all Bot Lists 
+     */
+    public async getAllLists(): Promise<BotList> {
+        return this._request('GET', `/lists`)
     }
 }
