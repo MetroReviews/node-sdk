@@ -2,7 +2,7 @@ import fetch, { Headers } from 'node-fetch';
 import ErrorHandler from '../errors/index';
 import { EventEmitter } from 'events';
 
-import { Snowflake, ListFlake, BotList } from '../typings';
+import { Snowflake, ListFlake, BotList } from '../types/BotList';
 
 import server from 'express';
 
@@ -22,6 +22,13 @@ export class MetroClient extends EventEmitter {
         };
     }
 
+    /**
+     * 
+     * @param method Request Method
+     * @param path Request Path
+     * @param body Request Body
+     * @returns Private Function used to manage Request Methods.
+     */
     private async _request(method: string, path: string, body?: Record<string, any>): Promise<any> {
         const headers = new Headers();
 
@@ -52,6 +59,42 @@ export class MetroClient extends EventEmitter {
         return responseBody;
     }
 
+    /**
+     * 
+     * @param id Bot List ID for Metro
+     * @param listInfo List Info to Update
+     * @returns Updates Bot List Info
+     */
+    public async updateList(id: ListFlake, listInfo: BotList): Promise<BotList> {
+
+        if (!listInfo) throw new Error('[Metro API] No Parameters provided to Update');
+        
+        /**
+         * eslint-disable-camelcase
+         */
+        await this._request('POST', `lists/${id}`, {
+            name: listInfo.name,
+            description: listInfo.description,
+            domain: listInfo.domain,
+            claim_bot_api: listInfo.claim_bot_api,
+            unclaim_bot_api: listInfo.unclaim_bot_api,
+            approve_bot_api: listInfo.approve_bot_api,
+            deny_bot_api: listInfo.deny_bot_api,
+            reset_secret_key: false,
+            icon: listInfo.icon
+        })
+
+        /**
+         * eslint-disable-camelcase
+         */
+        return listInfo;
+    }
+
+    /**
+     * 
+     * @param id Bot List ID for Metro
+     * @returns Bot List Information
+     */
     public async getList(id: ListFlake): Promise<BotList> {
 
         if (!id) throw new Error('[Metro API] Invalid List ID or List ID is missing!');
