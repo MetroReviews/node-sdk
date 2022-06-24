@@ -3,6 +3,7 @@ import ErrorHandler from '../errors/index';
 import { EventEmitter } from 'events';
 
 import { Snowflake, ListFlake, BotList } from '../types/BotList';
+import { ActionQuery, ActionResponse } from '../types/Actions';
 
 import server from 'express';
 
@@ -106,6 +107,12 @@ export class MetroClient extends EventEmitter {
      * @returns Array of all Bot Lists 
      */
     public async getAllLists(): Promise<BotList> {
-        return this._request('GET', `/lists`)
+
+        return this._request('GET', `lists`)
+    }
+
+    public async getActions(query?: ActionQuery): Promise<ActionResponse> {
+
+        return this._request('GET', 'actions', query);
     }
 }
