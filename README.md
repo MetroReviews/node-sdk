@@ -16,3 +16,36 @@
 </p>
 
 ---
+
+## Installation
+
+```shell
+npm install metro-sdk (coming soon)
+```
+
+---
+
+## Initialize the SDK
+
+```js
+const MetroAPI = require(`metro-sdk`)
+const Metro = new MetroAPI.MetroClient('Your Secret Key')
+```
+
+---
+
+## Update List
+
+```js
+await Metro.updateList({
+  name: listInfo.name,
+  description: listInfo.description,
+  domain: listInfo.domain,
+  claim_bot_api: listInfo.claim_bot_api,
+  unclaim_bot_api: listInfo.unclaim_bot_api,
+  approve_bot_api: listInfo.approve_bot_api,
+  deny_bot_api: listInfo.deny_bot_api,
+  reset_secret_key: false,
+  icon: listInfo.icon
+})
+```
