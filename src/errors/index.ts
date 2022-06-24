@@ -13,7 +13,7 @@ const messages = {
 export default class ErrorHandler extends Error {
     public response?: Response;
 
-    constructor(status: nnumber, message: string, response: Response) {
+    constructor(status: number, message: string, response: Response) {
         if (status in messages) {
             super(`${status} ${message} (${messages[status as keyof typeof messages]})`);
         } else {
