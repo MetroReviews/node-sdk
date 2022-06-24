@@ -4,7 +4,7 @@
   Metro Reviews SDK
 </h2>
 <p align="center">
-  Type Friendly Wrapper for the Metro Reviews API
+  Type Friendly Wrapper for the Metro Reviews API!
 </p>
 
 <p align="center">
@@ -12,6 +12,8 @@
  [![Version](https://img.shields.io/badge/Version-v0.0.1%20-green.svg?style=flat)](https://github.com/MetroReviews/metro-sdk)
  [![NPM Version](https://img.shields.io/badge/NPM-v0.0.1-red.svg)](https://github.com/MetroReviews/metro-sdk)
  [![License Type](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/MetroReviews/metro-sdk)
+ [![CodeQL](https://github.com/MetroReviews/node-sdk/actions/workflows/codeql.yml/badge.svg)](https://github.com/MetroReviews/node-sdk/actions/workflows/codeql.yml)
+ [![njsscan sarif](https://github.com/MetroReviews/node-sdk/actions/workflows/njsscan.yml/badge.svg)](https://github.com/MetroReviews/node-sdk/actions/workflows/njsscan.yml)
 
 </p>
 
